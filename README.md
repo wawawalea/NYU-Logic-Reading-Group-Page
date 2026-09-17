@@ -2,6 +2,8 @@
 
 A static website for the NYU Unnamed Logic Reading Group.
 
+Website: https://wawawalea.github.io/NYU-Logic-Reading-Group-Page/
+
 The group meets every Thursday, 6:30–8:00 PM Eastern Time, in Philosophy Department Room 201 (subject to change).
 
 ## Update the content
@@ -47,3 +49,11 @@ The website includes a canonical URL, page metadata, `robots.txt`, and `sitemap.
 After public access is enabled, add the full Site URL as a URL-prefix property in Google Search Console. Choose HTML tag verification and add the exact `google-site-verification` tag supplied by Google to the head of `dist/index.html`. Keep that tag after verification. Submit `sitemap.xml`, then inspect the homepage URL and request indexing. Google decides whether and when to index the page.
 
 If the domain changes, update the canonical URL, Open Graph URL, WebSite structured data, sitemap, and sitemap URL in robots.txt together.
+
+## Publish with GitHub Pages
+
+The workflow in `.github/workflows/deploy-pages.yml` publishes `dist` after each push to `main`. No build or dependency installation is needed.
+
+For the first deployment, open the repository's Settings > Pages and set Source to GitHub Actions. Then open Actions > Deploy reading group website and select Run workflow, or rerun the latest failed run. Later pushes publish automatically.
+
+All local links use relative paths so they work under the repository URL. The canonical URL and sitemap point to the GitHub Pages address. For Google Search Console, submit the sitemap at that address. A robots.txt inside a project path does not set crawl policy for the whole github.io host.

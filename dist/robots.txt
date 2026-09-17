@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://nyu-unnamed-logic.libingrui413.chatgpt.site/sitemap.xml
+Sitemap: https://wawawalea.github.io/NYU-Logic-Reading-Group-Page/sitemap.xml
