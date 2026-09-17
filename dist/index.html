@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#073b50">
+  <meta name="description" content="NYU Unnamed Logic Reading Group. Thursdays, 6:30–8:00 PM Eastern Time, Philosophy Department, Room 302. Weekly topics and readings.">
+  <title>NYU Unnamed Logic Reading Group</title>
+  <link rel="icon" href="assets/logo.png" type="image/png">
+  <link rel="stylesheet" href="styles.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <main class="ocean" id="ocean">
+    <div class="light" aria-hidden="true"></div>
+    <div class="surface" aria-hidden="true"></div>
+    <div class="particles" id="particles" aria-hidden="true"></div>
+    <header class="masthead">
+      <a class="seal" href="#" aria-label="NYU Unnamed Logic Reading Group home"><img src="assets/logo.png" alt="Reading group seal: a white manatee with lambda, mu, and phi" width="80" height="80"></a>
+    </header>
+    <section class="introduction" aria-labelledby="title">
+      <h1 id="title">NYU<br>unnamed logic reading group</h1>
+    </section>
+    <div class="symbols" aria-hidden="true"><span class="s1">λx.x</span><span class="s2">μ</span><span class="s3">⊢</span><span class="s4">∀</span><span class="s5">λ</span><span class="s6">φ → ψ</span><span class="s7">∃</span><span class="s8">μ α. c</span></div>
+    <section class="swimmers" aria-label="Explore the reading group">
+      <div class="swimmer about-swimmer" data-phase="0"><button class="manatee" data-panel="topics"><img src="assets/manatee.png" alt="" width="280" height="280"><span class="manatee-label">Weekly topics</span></button></div>
+      <div class="swimmer reading-swimmer" data-phase="2.2"><button class="manatee" data-panel="readings"><img src="assets/manatee.png" alt="" width="320" height="320"><span class="manatee-label">Weekly readings</span></button></div>
+      <div class="swimmer meeting-swimmer" data-phase="4.5"><button class="manatee" data-panel="about"><img src="assets/manatee.png" alt="" width="205" height="205"><span class="manatee-label">About</span></button></div>
+    </section>
+    <footer class="ocean-floor">
+      <button class="meeting-summary" data-panel="meeting"><span class="tiny-label">THURSDAYS</span><span class="meeting-time">6:30–8:00 <span>PM · Eastern Time</span></span><span class="meeting-place">Philosophy Department <span aria-hidden="true">/</span> Room 302</span></button>
+      <div class="ocean-controls"><button id="motion" aria-pressed="false"><span aria-hidden="true">Ⅱ</span> Pause motion</button></div>
+    </footer>
+  </main>
+  <dialog id="details" aria-labelledby="panel-title">
+    <div class="panel-top"><button class="close" aria-label="Close details">×</button></div>
+    <div id="panel-body"></div>
+  </dialog>
+  <noscript><div class="noscript">We meet every Thursday, 6:30–8:00 PM Eastern Time, in Philosophy Department Room 302. Topics and readings will be announced. Enable JavaScript to explore the manatees.</div></noscript>
+</body>
+</html>

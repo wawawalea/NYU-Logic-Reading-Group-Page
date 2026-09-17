@@ -1,0 +1,13 @@
+{
+  "name": "NYU Unnamed Logic Reading Group",
+  "meeting": {
+    "day": "Thursday",
+    "time": "6:30–8:00 PM",
+    "timezone": "Eastern Time",
+    "ianaTimezone": "America/New_York",
+    "location": "Philosophy Department",
+    "room": "Room 302"
+  },
+  "about": "To be announced.",
+  "weeks": []
+}
