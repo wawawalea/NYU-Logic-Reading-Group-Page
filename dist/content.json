@@ -6,8 +6,11 @@
     "timezone": "Eastern Time",
     "ianaTimezone": "America/New_York",
     "location": "Philosophy Department",
-    "room": "Room 302"
+    "room": "Room 201 (subject to change)"
   },
   "about": "To be announced.",
-  "weeks": []
+  "weeks": [],
+  "signup": {
+    "url": null
+  }
 }

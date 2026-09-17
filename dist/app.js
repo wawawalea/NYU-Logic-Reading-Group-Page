@@ -1,7 +1,7 @@
 'use strict';
 const dialog = document.querySelector('#details');
 const panel = document.querySelector('#panel-body');
-let content = {about:'To be announced.', weeks:[], meeting:{day:'Thursday',time:'6:30–8:00 PM',timezone:'Eastern Time',location:'Philosophy Department',room:'Room 302'}};
+let content = {about:'To be announced.', weeks:[], meeting:{day:'Thursday',time:'6:30–8:00 PM',timezone:'Eastern Time',location:'Philosophy Department',room:'Room 201 (subject to change)'}};
 let failed = false;
 const ready = fetch('content.json').then(r=>{if(!r.ok)throw Error('content');return r.json()}).then(data=>{content=data;syncMeeting()}).catch(()=>{failed=true});
 const escapeHTML = value => String(value).replace(/[&<>"']/g, c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
@@ -17,7 +17,7 @@ function weeklyMarkup(kind) {
       : 'Date to be announced';
     let body;
     if (kind === 'topics') {
-      body = `<h3>${escapeHTML(week.topic || 'To be announced.')}</h3>`;
+      body = `<h3>${escapeHTML(week.topic || 'To be announced.')}</h3>${week.description ? `<p class="session-description">${escapeHTML(week.description)}</p>` : ''}`;
     } else {
       body = (week.readings || []).map(reading => {
         let url;
@@ -29,14 +29,20 @@ function weeklyMarkup(kind) {
     return `<article class="week"><time>${label}</time>${body}</article>`;
   }).join('');
 }
+function signupMarkup() {
+  let url;
+  try { url = new URL(content.signup?.url); } catch { return '<p>Sign-up link coming soon.</p>'; }
+  if (!['https:', 'http:'].includes(url.protocol)) return '<p>Sign-up link coming soon.</p>';
+  return `<a class="signup-link" href="${escapeHTML(url.href)}" target="_blank" rel="noopener noreferrer">Sign up for email updates</a>`;
+}
 let opener;
 document.querySelectorAll('[data-panel]').forEach(button => button.addEventListener('click', async () => {
   await ready;
   opener = button;
   const name = button.dataset.panel;
-  const titles = {about:'About', topics:'Weekly topics', readings:'Weekly readings', meeting:'Schedule'};
+  const titles = {about:'About', topics:'Weekly topics', readings:'Weekly readings', meeting:'Schedule', signup:'Email updates'};
   const body = name === 'about' ? `<p>${escapeHTML(content.about)}</p>`
-    : name === 'meeting' ? meetingMarkup() : weeklyMarkup(name);
+    : name === 'meeting' ? meetingMarkup() : name === 'signup' ? signupMarkup() : weeklyMarkup(name);
   panel.innerHTML = `<h2 id="panel-title">${titles[name]}</h2>${body}`;
   if (!dialog.open) dialog.showModal();
   dialog.scrollTop = 0;
