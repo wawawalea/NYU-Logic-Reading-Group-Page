@@ -29,3 +29,10 @@ dialog{width:calc(100vw - 48px);height:calc(100svh - 48px);max-width:none;max-he
 @media(max-width:600px){dialog{width:calc(100vw - 24px);height:calc(100svh - 24px);padding:12px 20px 28px}.panel-top{top:-12px;padding:4px 0}#panel-body{margin-top:10px}#panel-body h2{font-size:2.25rem}.signup-swimmer{left:65%;top:70%;width:96px}.meeting-place{line-height:1.6}.ocean-floor{gap:18px}}
 
 @media(max-width:600px){.ocean{min-height:1200px}}
+
+/* Group name and prominent original seal share the opening row. */
+.masthead{display:flex;align-items:center;justify-content:space-between;gap:48px;width:min(950px,85%);padding:0;margin:42px 7.5% 0}
+.masthead h1{font-size:clamp(2.5rem,3.8vw,3.7rem);line-height:1.12;flex:1;min-width:0}
+.seal img{display:block;width:220px;height:220px;object-fit:contain}
+@media(max-width:900px){.masthead{gap:30px}.seal img{width:180px;height:180px}}
+@media(max-width:600px){.masthead{width:calc(100% - 40px);margin:32px 20px 0;gap:14px}.masthead h1{font-size:clamp(1.75rem,6vw,2.25rem);line-height:1.2}.seal img{width:clamp(112px,29vw,156px);height:auto;aspect-ratio:1}}

@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://nyu-unnamed-logic.libingrui413.chatgpt.site/sitemap.xml
